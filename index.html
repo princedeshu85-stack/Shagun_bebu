@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0a0008">
+<title>Prince ❤️ Shagun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;600&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ░░ AMBIENT PARTICLES ░░ -->
+<canvas id="particles"></canvas>
+
+<!-- ░░ STORY PROGRESS BAR ░░ -->
+<div id="story-bar-wrap">
+  <div id="story-bar-track">
+    <div id="story-bar-fill"></div>
+  </div>
+  <div id="story-counter"><span id="cur-slide">1</span> / <span id="tot-slides">8</span></div>
+</div>
+
+<!-- ░░ MUSIC TOGGLE ░░ -->
+<button id="music-btn" title="Toggle music" aria-label="Toggle background music">
+  <span id="music-icon">♪</span>
+  <span id="music-label">Music</span>
+</button>
+<!-- Soft ambient tone via Web Audio API — no external file needed -->
+
+<!-- ░░ DOUBLE TAP HEART LAYER ░░ -->
+<div id="heart-layer"></div>
+
+<!-- ░░ SWIPE HINT ░░ -->
+<div id="swipe-hint">
+  <div class="swipe-arrow">↑</div>
+  <span>swipe up</span>
+</div>
+
+<!-- ░░░░░░░░░░  S L I D E S  ░░░░░░░░░░ -->
+<div id="reel-container">
+
+  <!-- SLIDE 0 — COVER -->
+  <div class="slide slide-cover active" data-index="0">
+    <div class="cover-bg"></div>
+    <div class="cover-petals"></div>
+    <div class="cover-content">
+      <p class="cover-sub cinzel">a love story</p>
+      <h1 class="cover-title dancing">Prince <span class="heart-glyph">❤</span> Shagun</h1>
+      <p class="cover-tagline cormorant">Tap anywhere · Swipe up to begin</p>
+      <div class="cover-scroll-cue">
+        <div class="cue-dot"></div>
+        <div class="cue-dot"></div>
+        <div class="cue-dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 1 -->
+  <div class="slide slide-photo" data-index="1" data-caption="The moment everything started ✨" data-sub="Where it all began">
+    <div class="photo-wrap">
+      <img class="slide-img" data-photo="0" alt="Photo 1">
+      <div class="photo-vignette"></div>
+    </div>
+    <div class="caption-overlay">
+      <p class="caption-sub cinzel">chapter one</p>
+      <h2 class="caption-main dancing">The moment everything started ✨</h2>
+      <p class="caption-detail cormorant">Where it all began</p>
+    </div>
+    <div class="slide-number cormorant">01</div>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="slide slide-photo" data-index="2" data-caption="Your smile is my home ❤️" data-sub="In your eyes, I found my universe">
+    <div class="photo-wrap">
+      <img class="slide-img" data-photo="1" alt="Photo 2">
+      <div class="photo-vignette"></div>
+    </div>
+    <div class="caption-overlay">
+      <p class="caption-sub cinzel">chapter two</p>
+      <h2 class="caption-main dancing">Your smile is my home ❤️</h2>
+      <p class="caption-detail cormorant">In your eyes, I found my universe</p>
+    </div>
+    <div class="slide-number cormorant">02</div>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="slide slide-photo" data-index="3" data-caption="Every moment feels like magic" data-sub="Time stands still when I'm with you">
+    <div class="photo-wrap">
+      <img class="slide-img" data-photo="2" alt="Photo 3">
+      <div class="photo-vignette"></div>
+    </div>
+    <div class="caption-overlay">
+      <p class="caption-sub cinzel">chapter three</p>
+      <h2 class="caption-main dancing">Every moment feels like magic</h2>
+      <p class="caption-detail cormorant">Time stands still when I'm with you</p>
+    </div>
+    <div class="slide-number cormorant">03</div>
+  </div>
+
+  <!-- SLIDE 4 -->
+  <div class="slide slide-photo" data-index="4" data-caption="You calm my chaos" data-sub="My anchor in every storm">
+    <div class="photo-wrap">
+      <img class="slide-img" data-photo="3" alt="Photo 4">
+      <div class="photo-vignette"></div>
+    </div>
+    <div class="caption-overlay">
+      <p class="caption-sub cinzel">chapter four</p>
+      <h2 class="caption-main dancing">You calm my chaos</h2>
+      <p class="caption-detail cormorant">My anchor in every storm</p>
+    </div>
+    <div class="slide-number cormorant">04</div>
+  </div>
+
+  <!-- SLIDE 5 -->
+  <div class="slide slide-photo" data-index="5" data-caption="Building forever together" data-sub="Every step, side by side">
+    <div class="photo-wrap">
+      <img class="slide-img" data-photo="4" alt="Photo 5">
+      <div class="photo-vignette"></div>
+    </div>
+    <div class="caption-overlay">
+      <p class="caption-sub cinzel">chapter five</p>
+      <h2 class="caption-main dancing">Building forever together</h2>
+      <p class="caption-detail cormorant">Every step, side by side</p>
+    </div>
+    <div class="slide-number cormorant">05</div>
+  </div>
+
+  <!-- SLIDE 6 -->
+  <div class="slide slide-photo" data-index="6" data-caption="Golden hours + you = perfect" data-sub="Our favourite kind of light">
+    <div class="photo-wrap">
+      <img class="slide-img" data-photo="5" alt="Photo 6">
+      <div class="photo-vignette"></div>
+    </div>
+    <div class="caption-overlay">
+      <p class="caption-sub cinzel">chapter six</p>
+      <h2 class="caption-main dancing">Golden hours + you = perfect</h2>
+      <p class="caption-detail cormorant">Our favourite kind of light</p>
+    </div>
+    <div class="slide-number cormorant">06</div>
+  </div>
+
+  <!-- SLIDE 7 — BONUS PHOTO -->
+  <div class="slide slide-photo" data-index="7" data-caption="Always & forever 🌹" data-sub="Every picture tells our story">
+    <div class="photo-wrap">
+      <img class="slide-img" data-photo="6" alt="Photo 7">
+      <div class="photo-vignette"></div>
+    </div>
+    <div class="caption-overlay">
+      <p class="caption-sub cinzel">chapter seven</p>
+      <h2 class="caption-main dancing">Always & forever 🌹</h2>
+      <p class="caption-detail cormorant">Every picture tells our story</p>
+    </div>
+    <div class="slide-number cormorant">07</div>
+  </div>
+
+  <!-- SLIDE 8 — FINALE -->
+  <div class="slide slide-finale" data-index="8">
+    <div class="finale-bg"></div>
+    <div class="finale-rings">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+    </div>
+    <div class="finale-content">
+      <p class="finale-pre cinzel">always & forever</p>
+      <h1 class="finale-title dancing">❤️ Forever Us ❤️</h1>
+      <div class="finale-divider"></div>
+      <p class="finale-quote cormorant">"This is not a website,<br>it's a feeling."</p>
+      <div class="finale-hearts">
+        <span class="fh" style="--d:0s">❤</span>
+        <span class="fh" style="--d:.3s">💕</span>
+        <span class="fh" style="--d:.6s">❤</span>
+        <span class="fh" style="--d:.9s">💕</span>
+        <span class="fh" style="--d:1.2s">❤</span>
+      </div>
+      <p class="finale-names dancing">Prince <span>✦</span> Shagun</p>
+    </div>
+  </div>
+
+</div><!-- /reel-container -->
+
+<script src="photos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
